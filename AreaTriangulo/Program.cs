@@ -7,28 +7,30 @@ namespace AreaTriangulo
     {
         static void Main(string[] args)
         {
-            double aX, bX, cX, aY, bY, cY  = 0.0;
+            Triangulo x, y;
+            x = new Triangulo();
+            y = new Triangulo();
             double pX, pY = 0.0;
             double areaX, areaY = 0.0;
 
             Console.WriteLine("Entre com os lados da medidas do triangulo X");
-            aX = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
-            bX = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
-            cX = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            x.A = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            x.B = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            x.C = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
 
             Console.WriteLine("Entre com os lados da medidas do triangulo Y");
-            aY = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
-            bY = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
-            cY = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            y.A = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            y.B = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
+            y.C = double.Parse(Console.ReadLine(), CultureInfo.InvariantCulture);
 
 
-            pX = (aX + bX + cX) / 2;
+            pX = (x.A + x.B + x.C) / 2;
 
-            pY = (aY + bY + cY) / 2;
+            pY = (y.A + y.B + y.C) / 2;
 
-            areaX = Math.Sqrt(pX*(pX - aX)*(pX - bX)*(pX - cX));
+            areaX = Math.Sqrt(pX*(pX - x.A)*(pX - x.B)*(pX - x.C));
 
-            areaY = Math.Sqrt(pY * (pY - aY) * (pY - bY) * (pY - cY));
+            areaY = Math.Sqrt(pY * (pY - y.A) * (pY - y.B) * (pY - y.C));
 
             Console.WriteLine("Área de X = {0}", areaX.ToString("F4", CultureInfo.InvariantCulture));
             Console.WriteLine("Área de Y = {0}", areaY.ToString("F4", CultureInfo.InvariantCulture));
